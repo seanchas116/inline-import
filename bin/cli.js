@@ -24,6 +24,11 @@ function gotInput(str) {
 }
 
 function errorExit(err) {
-  console.err(err);
+  if (err.stack) {
+    console.error(err.stack);
+  }
+  else {
+    console.error(String(err));
+  }
   process.exit(1);
 }
