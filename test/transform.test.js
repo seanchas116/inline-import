@@ -44,4 +44,15 @@ describe("inline-import", function () {
     var expected = '"import(\'foo\')};" __inlineImport_0\nimport __inlineImport_0 from \'bar\';\n';
     assert.equal(transform(source), expected);
   });
+
+  // TODO
+  // it("ignores template string", function () {
+  //   var source = "`import(\"foo\")} ${import('bar')}`\n"
+  //     "import('baz')\n";
+  //   var expected = "`import(\"foo\")} ${__inlineImport_0}`\n"
+  //     "__inlineImport_1\n"
+  //     "import __inlineImport_0 from 'bar';\n"
+  //     "import __inlineImport_1 from 'baz';\n";
+  //   assert.equal(transform(source), expected);
+  // });
 })
