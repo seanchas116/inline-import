@@ -4,6 +4,8 @@ var Parser = require("fastparse");
 
 var parser = new Parser({
   source: {
+    "/\\*": "comment",
+    "//": "lineComment",
     "import\\(['\"]([^'\")]*)['\"]\\)": function (match, name, index, length) {
       this.imports.push({
         name: name,
@@ -12,6 +14,12 @@ var parser = new Parser({
       });
       return "source";
     }
+  },
+  comment: {
+    "\\*/": "source"
+  },
+  lineComment: {
+    "\n": "source"
   }
 });
 
