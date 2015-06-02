@@ -20,4 +20,9 @@ describe("inline-import", function () {
       assert.equal(transform(source), expect);
     });
   });
+
+  it("ignores comments", function () {
+    var source = '/*var foo = {bar: import("baz")};*/';
+    assert.equal(transform(source), source);
+  });
 })
