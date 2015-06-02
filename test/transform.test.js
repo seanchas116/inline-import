@@ -32,4 +32,16 @@ describe("inline-import", function () {
     var expected = "// import('foo')};\n__inlineImport_0\nimport __inlineImport_0 from 'bar';\n";
     assert.equal(transform(source), expected);
   });
+
+  it("ignores single quote string", function () {
+    var source = "'import(\"foo\")};' import('bar')\n";
+    var expected = "'import(\"foo\")};' __inlineImport_0\nimport __inlineImport_0 from 'bar';\n";
+    assert.equal(transform(source), expected);
+  });
+
+  it("ignores double quote string", function () {
+    var source = '"import(\'foo\')};" import("bar")\n';
+    var expected = '"import(\'foo\')};" __inlineImport_0\nimport __inlineImport_0 from \'bar\';\n';
+    assert.equal(transform(source), expected);
+  });
 })

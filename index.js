@@ -6,6 +6,8 @@ var parser = new Parser({
   source: {
     "/\\*": "comment",
     "//": "lineComment",
+    "'": "string1",
+    '"': "string2",
     "import\\(['\"]([^'\")]*)['\"]\\)": function (match, name, index, length) {
       this.imports.push({
         name: name,
@@ -20,6 +22,14 @@ var parser = new Parser({
   },
   lineComment: {
     "\n": "source"
+  },
+  string1: {
+    "\\\\'": true,
+    "'": "source"
+  },
+  string2: {
+    '\\\\"': true,
+    '"': "source"
   }
 });
 
