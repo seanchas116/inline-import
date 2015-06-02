@@ -1,7 +1,7 @@
 "use strict";
 
 var test = require("tap").test;
-var transform = require("./index");
+var transform = require("../");
 
 test("replace imports", function (t) {
   var source = "var foo = {bar: import('baz')};";
