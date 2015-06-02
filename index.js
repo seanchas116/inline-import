@@ -40,7 +40,7 @@ function findImports(source) {
   parser.parse("source", source, context);
 
   return context.imports;
-};
+}
 
 function importName(index) {
   return "__inlineImport_" + index;
@@ -51,7 +51,6 @@ function replaceImports(source, imports) {
   var lastIndex = 0;
 
   imports.forEach(function (importData, i) {
-    var importData = imports[i];
     result += source.substring(lastIndex, importData.index);
     result += importName(i);
     lastIndex = importData.index + importData.length;

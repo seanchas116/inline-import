@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+"use strict";
+
 var fs = require("fs");
 var concat = require("concat-stream");
 var inlineImport = require("../");
