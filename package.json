@@ -9,9 +9,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "concat-stream": "^1.4.8",
     "fastparse": "^1.1.1"
   },
   "devDependencies": {
     "tap": "^1.2.0"
+  },
+  "bin": {
+    "inline-import": "cli.js"
   }
 }
