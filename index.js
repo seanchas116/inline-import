@@ -61,7 +61,7 @@ function topImports(imports) {
 function transform(source) {
   var imports = findImports(source);
 
-  return replaceImports(source, imports) + "\n" + topImports(imports);
+  return replaceImports(source, imports) + topImports(imports);
 }
 
 module.exports = transform;
