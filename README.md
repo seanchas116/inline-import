@@ -28,11 +28,18 @@ Usage
 
 ### As Library
 
-TODO
+
+```js
+var inlineImport = require("inline-import");
+inlineImport(source) // => transformed source
+```
 
 ### As CLI
 
-TODO
+```
+inline-import input.js > output.js
+cat input.js | inline-import > output.js
+```
 
 Todo
 --------
