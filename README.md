@@ -44,7 +44,7 @@ cat input.js | inline-import > output.js
 Todo
 --------
 
-- Ignore comments and strings
+- Ignore template strings and regular expressions
 - Source map support
 - Browserify transform
 - webpack loader
