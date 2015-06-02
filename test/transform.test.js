@@ -22,7 +22,14 @@ describe("inline-import", function () {
   });
 
   it("ignores comments", function () {
-    var source = '/*var foo = {bar: import("baz")};*/';
-    assert.equal(transform(source), source);
+    var source = "/* import('foo')}; */ import('bar')\n";
+    var expected = "/* import('foo')}; */ __inlineImport_0\nimport __inlineImport_0 from 'bar';\n";
+    assert.equal(transform(source), expected);
+  });
+
+  it("ignores line comments", function () {
+    var source = "// import('foo')};\nimport('bar')\n";
+    var expected = "// import('foo')};\n__inlineImport_0\nimport __inlineImport_0 from 'bar';\n";
+    assert.equal(transform(source), expected);
   });
 })
