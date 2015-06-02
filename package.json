@@ -1,0 +1,17 @@
+{
+  "name": "inline-import",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap ./test.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fastparse": "^1.1.1"
+  },
+  "devDependencies": {
+    "tap": "^1.2.0"
+  }
+}
