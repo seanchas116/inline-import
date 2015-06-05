@@ -3,6 +3,8 @@ inline-import
 
 Inline (function-like) ES6 `import` like good old CommonJS `require`
 
+[![Build Status](https://travis-ci.org/seanchas116/inline-import.svg?branch=master)](https://travis-ci.org/seanchas116/inline-import)
+
 Example
 --------
 
