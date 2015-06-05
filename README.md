@@ -20,7 +20,7 @@ var foo = {
 var foo = {
   bar: __inlineImport_0;
 };
-import __inlineImport_0 from 'baz';
+import __inlineImport_0 from 'bar';
 ```
 
 Usage
